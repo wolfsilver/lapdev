@@ -2,6 +2,10 @@ name: release-lapdev-ws
 
 on:
   workflow_dispatch:
+    inputs:
+      lapdev_version:
+        description: "Lapdev version for release"
+        required: true
 
 jobs:
   release-lapdev-ws:
