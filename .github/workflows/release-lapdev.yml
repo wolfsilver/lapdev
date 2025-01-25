@@ -1,0 +1,14 @@
+name: release-lapdev
+
+on:
+  workflow_dispatch:
+
+jobs:
+  release-lapdev:
+    permissions:
+      contents: write
+
+    uses: ./.github/workflows/binary-release.yml
+    with:
+      PACKAGE_NAME: "lapdev"
+      lapdev_version: ${{ github.event.inputs.lapdev_version }}
