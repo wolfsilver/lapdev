@@ -9,6 +9,7 @@ on:
       lapdev_version:
         description: "Lapdev version for release"
         required: true
+        type: string
 
 
 jobs:
