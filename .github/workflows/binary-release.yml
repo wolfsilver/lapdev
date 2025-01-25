@@ -125,6 +125,11 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Update toolchain
+        run: |
+          rustup update
+          rustup target add wasm32-unknown-unknown
+
       - name: Install toolchain
         uses: actions-rs/toolchain@v1
         with:
