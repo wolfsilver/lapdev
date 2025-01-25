@@ -49,8 +49,13 @@ use crate::{
 
 pub const LAPDEV_WS_VERSION: &str = env!("CARGO_PKG_VERSION");
 const INSTALL_SCRIPT: &[u8] = include_bytes!("../scripts/install_guest_agent.sh");
+#[cfg(target_arch = "x86_64")]
 const LAPDEV_GUEST_AGENT: &[u8] =
     include_bytes!("../../target/x86_64-unknown-linux-musl/release/lapdev-guest-agent");
+
+#[cfg(target_arch = "aarch64")]
+const LAPDEV_GUEST_AGENT: &[u8] =
+    include_bytes!("../../target/aarch64-unknown-linux-musl/release/lapdev-guest-agent");
 
 #[derive(Clone, Deserialize, Default)]
 #[serde(rename_all = "kebab-case")]
